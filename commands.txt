@@ -1,0 +1,47 @@
+-----PRIMARY-------
+Logman.exe create counter Prim-PerfLog-Short ^
+-o "C:\temp\%ComputerName%_PerfLog-Short.blg" ^
+-f bincirc ^
+-v mmddhhmm ^
+-max 500 ^
+-c "\LogicalDisk(*)\*" ^
+   "\Memory\*" ^
+   "\Cache\*" ^
+   "\Network Interface(*)\*" ^
+   "\Paging File(*)\*" ^
+   "\PhysicalDisk(*)\*" ^
+   "\Processor(*)\*" ^
+   "\Processor Information(*)\*" ^
+   "\Process(*)\*" ^
+   "\Thread(*)\*" ^
+   "\Server\*" ^
+   "\System\*" ^
+   "\SQLServer:Availability Replica(*)\Bytes Received from Replica/sec" ^
+   "\SQLServer:Availability Replica(*)\Bytes Sent to Replica/sec“ ^
+   "\SQLServer:Availability Replica(*)\Flow Control/sec“ ^
+   "\SQLServer:Databases(*)\Log Bytes Flushed/sec“ ^
+-si 00:00:01
+
+-------SECONDARY--------
+Logman.exe create counter Sec-PerfLog-Short ^
+-o "C:\temp\%ComputerName%_PerfLog-Short.blg" ^
+-f bincirc ^
+-v mmddhhmm ^
+-max 500 ^
+-c "\LogicalDisk(*)\*" ^
+   "\Memory\*" ^
+   "\Cache\*" ^
+   "\Network Interface(*)\*" ^
+   "\Paging File(*)\*" ^
+   "\PhysicalDisk(*)\*" ^
+   "\Processor(*)\*" ^
+   "\Processor Information(*)\*" ^
+   "\Process(*)\*" ^
+   "\Thread(*)\*" ^
+   "\Server\*" ^
+   "\System\*" ^
+   "\SQLServer:Availability Replica(*)\Bytes Received from Replica/sec" ^
+   "\SQLServer:Availability Replica(*)\Bytes Sent to Replica/sec“ ^
+   "\SQLServer:Availability Replica(*)\Flow Control/sec“ ^
+   "\SQLServer:Databases(*)\Log Bytes Flushed/sec“ ^
+-si 00:00:01
